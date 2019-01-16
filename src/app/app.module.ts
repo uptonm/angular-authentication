@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { SuiModule } from 'ng2-semantic-ui';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { config } from './enviornment/enviornment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +22,15 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     SignupComponent
   ],
-  imports: [SuiModule, BrowserModule, FormsModule, AppRoutingModule],
+  imports: [
+    SuiModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(config, 'users'),
+    AngularFireDatabaseModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
