@@ -16,7 +16,9 @@
         <i class="search link icon"></i>
       </div>
     </div>
-    <a *ngIf="loggedIn" class="ui item" (click)="onLogout()"> Logout </a>
+    <a *ngIf="loggedIn" class="ui item" (click)="onLogout()">
+      Logout ({{ user.email }})
+    </a>
     <a
       *ngIf="!loggedIn"
       class="ui item"
