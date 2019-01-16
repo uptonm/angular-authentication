@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# raw styles
+/semantic
+
 # dependencies
 /node_modules
 

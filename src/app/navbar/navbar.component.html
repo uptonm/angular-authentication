@@ -1,0 +1,29 @@
+<div class="ui inverted menu">
+  <a
+    class="item"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="['']"
+  >
+    Home
+  </a>
+  <a class="item" routerLinkActive="active" routerLink="/messages">Messages</a>
+  <a class="item" routerLinkActive="active" routerLink="/friends"> Friends</a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search..." />
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <a *ngIf="loggedIn" class="ui item" (click)="onLogout()"> Logout </a>
+    <a
+      *ngIf="!loggedIn"
+      class="ui item"
+      routerLinkActive="active"
+      [routerLink]="['/login']"
+    >
+      Login
+    </a>
+  </div>
+</div>

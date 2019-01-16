@@ -1,0 +1,46 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <form class="ui large form">
+      <div class="ui stacked segment inverted">
+        <h2 class="ui image header" style="color: white; margin-bottom: 0px;">
+          <i class="icon user secret"></i>
+          <div class="content">Log-In to your account</div>
+        </h2>
+        <div class="ui divider"></div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input
+              [(ngModel)]="user.email"
+              type="text"
+              name="email"
+              placeholder="E-mail address"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input
+              [(ngModel)]="user.password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <!-- <div class="ui fluid large teal submit button">Login</div> -->
+        <button
+          class="ui fluid large primary submit button"
+          (click)="onLogin()"
+        >
+          Log-In
+        </button>
+      </div>
+
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="ui message inverted">New to us? <a href="#">Sign Up</a></div>
+  </div>
+</div>
