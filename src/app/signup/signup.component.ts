@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -17,10 +18,29 @@ export class SignupComponent implements OnInit {
     class: 'warning',
     message: ''
   };
-
+  // tslint:disable-next-line:no-inferrable-types
+  page: number = 1;
   errors: string[] = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.route.url.subscribe(() => {
+      this.page = +this.route.snapshot.url[1];
+    });
+  }
+
+  nextPage() {
+    console.log(this.user);
+    this.page++;
+    this.navigate(this.page);
+  }
+
+  navigate(page: number) {
+    this.router.navigate(['/signup', page]);
+  }
 
   ngOnInit() {}
 
@@ -41,7 +61,6 @@ export class SignupComponent implements OnInit {
   validate() {
     this.errors = [];
     if (this.user.password !== this.user.confirmPassword) {
-      console.log('worked');
       this.errors.push('Passwords must match');
     }
     if (this.user.password.length < 8) {

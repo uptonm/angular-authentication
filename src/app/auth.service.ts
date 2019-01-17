@@ -1,41 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { AngularFireDatabase } from 'angularfire2/database';
+import * as _ from 'lodash';
 import { Router } from '@angular/router';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   // tslint:disable-next-line:no-inferrable-types
-  loggedIn: boolean = true;
-  user = {};
+  auth: any = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   getUserAuth(): any {
-    if (this.loggedIn) {
-      return this.user;
-    } else {
-      return false;
-    }
+    return this.auth;
   }
 
   logIn(user): void {
-    this.loggedIn = true;
-    this.user = user;
+    this.auth = user;
     this.router.navigate(['/']);
   }
 
   logOut(): void {
-    this.loggedIn = false;
+    this.auth = {};
   }
 
   signUp(user) {
-    return this.http.post('http://localhost:8000/api/users', {
+    return this.http.put('http://localhost:8000/api/users', {
       username: user.email,
-      password: user.password
+      password: user.password,
+      first: user.first,
+      last: user.last,
+      bio: user.bio
     });
   }
 }

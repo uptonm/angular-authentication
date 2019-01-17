@@ -1,12 +1,7 @@
 <div class="ui inverted menu">
-  <a
-    class="item"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
-    [routerLink]="['']"
+  <a class="item" [routerLink]="['']"
+    ><i class="icon user secret"></i>Something.com</a
   >
-    Home
-  </a>
   <a class="item" routerLinkActive="active" routerLink="/messages">Messages</a>
   <a class="item" routerLinkActive="active" routerLink="/friends"> Friends</a>
   <div class="right menu">
@@ -16,11 +11,11 @@
         <i class="search link icon"></i>
       </div>
     </div>
-    <a *ngIf="loggedIn" class="ui item" (click)="onLogout()">
-      Logout ({{ user.email }})
+    <a *ngIf="!loggedIn()" class="ui item" (click)="onLogout()">
+      Logout ({{ auth.email }})
     </a>
     <a
-      *ngIf="!loggedIn"
+      *ngIf="loggedIn()"
       class="ui item"
       routerLinkActive="active"
       [routerLink]="['/login']"

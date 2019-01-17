@@ -6,59 +6,186 @@
           <i class="icon user secret"></i>
           <div class="content">Sign-Up for your account</div>
         </h2>
-        <div class="ui divider"></div>
-        <div class="field">
-          <div
-            class="ui left icon input"
-            [ngClass]="errors.length !== 0 ? 'error' : ''"
-          >
+
+        <div class="ui mini steps">
+          <a class="step" routerLink="/signup/1" routerLinkActive="active">
             <i class="user icon"></i>
-            <input
-              [(ngModel)]="user.email"
-              type="text"
-              name="email"
-              placeholder="E-mail address"
-            />
+            <div class="content"><div class="title">Account</div></div>
+          </a>
+          <a class="step" routerLink="/signup/2" routerLinkActive="active">
+            <i class="payment icon"></i>
+            <div class="content"><div class="title">Profile</div></div>
+          </a>
+          <a class="step" routerLink="/signup/3" routerLinkActive="active">
+            <i class="info icon"></i>
+            <div class="content"><div class="title">Confirmation</div></div>
+          </a>
+        </div>
+
+        <!-- Page 1 - Account Info -->
+        <div *ngIf="page == 1">
+          <div class="ui divider"></div>
+          <div class="field">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="user icon"></i>
+              <input
+                [(ngModel)]="user.email"
+                type="text"
+                name="email"
+                placeholder="E-mail address"
+              />
+            </div>
+          </div>
+          <div class="field" style="margin-top: 2rem;">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="lock icon"></i>
+              <input
+                [(ngModel)]="user.password"
+                (ngModelChange)="analyze(user.password)"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="lock icon"></i>
+              <input
+                [(ngModel)]="user.confirmPassword"
+                (ngModelChange)="analyze(user.confirmPassword)"
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+              />
+            </div>
+          </div>
+          <sui-progress
+            class="tiny indicating active"
+            [value]="passwordStrength.percent"
+            [showProgress]="false"
+          ></sui-progress>
+        </div>
+        <!-- End Page 1 -->
+
+        <!-- Page 2 - Personal Info -->
+        <div *ngIf="page == 2">
+          <div class="ui divider"></div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input
+                [(ngModel)]="user.first"
+                type="text"
+                name="first"
+                placeholder="First Name"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="user icon"></i>
+              <input
+                [(ngModel)]="user.last"
+                type="text"
+                name="last"
+                placeholder="Last Name"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <textarea
+              [(ngModel)]="user.bio"
+              type="textarea"
+              name="Bio"
+              placeholder="Enter a short bio"
+              rows="2"
+              style="margin-bottom: 2.3rem"
+            ></textarea>
           </div>
         </div>
-        <div class="field" style="margin-top: 2rem;">
-          <div
-            class="ui left icon input"
-            [ngClass]="errors.length !== 0 ? 'error' : ''"
-          >
-            <i class="lock icon"></i>
-            <input
-              [(ngModel)]="user.password"
-              (ngModelChange)="analyze(user.password)"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
+        <!-- End Page 2 -->
+
+        <!-- Page 3 - Confirmation -->
+        <div *ngIf="page == 3">
+          <div class="ui divider"></div>
+          <div class="field">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="user icon"></i>
+              <input
+                [(ngModel)]="user.email"
+                type="text"
+                name="email"
+                placeholder="E-mail address"
+              />
+            </div>
           </div>
-        </div>
-        <div class="field">
-          <div
-            class="ui left icon input"
-            [ngClass]="errors.length !== 0 ? 'error' : ''"
-          >
-            <i class="lock icon"></i>
-            <input
-              [(ngModel)]="user.confirmPassword"
-              (ngModelChange)="analyze(user.confirmPassword)"
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-            />
+          <div class="field" style="margin-top: 2rem;">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="lock icon"></i>
+              <input
+                [(ngModel)]="user.password"
+                (ngModelChange)="analyze(user.password)"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
           </div>
+          <div class="field">
+            <div
+              class="ui left icon input"
+              [ngClass]="errors.length !== 0 ? 'error' : ''"
+            >
+              <i class="lock icon"></i>
+              <input
+                [(ngModel)]="user.confirmPassword"
+                (ngModelChange)="analyze(user.confirmPassword)"
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+              />
+            </div>
+          </div>
+          <sui-progress
+            class="tiny indicating active"
+            [value]="passwordStrength.percent"
+            [showProgress]="false"
+          ></sui-progress>
         </div>
-        <sui-progress
-          class="tiny indicating active"
-          [value]="passwordStrength.percent"
-          [showProgress]="false"
-        ></sui-progress>
-        <!-- <div class="ui fluid large teal submit button">Login</div> -->
+        <!-- End Page 3 -->
+
+        <!-- Page 1-2 - Entering Information -->
         <button
           class="ui fluid large primary submit button"
+          *ngIf="page !== 3"
+          (click)="nextPage()"
+        >
+          Next Page
+        </button>
+
+        <!-- Page 3 - Submitting -->
+        <button
+          class="ui fluid large primary submit button"
+          *ngIf="page === 3"
           (click)="onSignup()"
         >
           Sign-Up

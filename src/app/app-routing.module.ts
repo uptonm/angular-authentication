@@ -10,7 +10,8 @@ import { MessagesComponent } from './messages/messages.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'signup', pathMatch: 'full', redirectTo: '/signup/1' },
+  { path: 'signup/:page', component: SignupComponent },
   { path: 'friends', component: FriendsComponent },
   { path: 'messages', component: MessagesComponent }
 ];

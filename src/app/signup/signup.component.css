@@ -5,7 +5,7 @@ body > .grid {
   margin-top: -100px;
 }
 .column {
-  max-width: 450px;
+  max-width: 500px;
 }
 .middle.aligned {
   margin-top: 12rem;
@@ -13,4 +13,11 @@ body > .grid {
 }
 .masthead {
   margin-top: 10px !important;
+}
+.ui .step {
+  max-width: 145px !important;
+  max-height: 70px;
+}
+.steps {
+  margin-bottom: 0px;
 }
