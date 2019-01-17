@@ -27,12 +27,6 @@ export class AuthService {
   }
 
   signUp(user) {
-    return this.http.put('http://localhost:8000/api/users', {
-      username: user.email,
-      password: user.password,
-      first: user.first,
-      last: user.last,
-      bio: user.bio
-    });
+    return this.http.put('http://localhost:8000/api/users', user);
   }
 }

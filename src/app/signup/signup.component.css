@@ -21,3 +21,6 @@ body > .grid {
 .steps {
   margin-bottom: 0px;
 }
+#pass-show:hover {
+  color: black;
+}

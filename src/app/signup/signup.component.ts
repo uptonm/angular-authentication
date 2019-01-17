@@ -11,7 +11,10 @@ export class SignupComponent implements OnInit {
   user = {
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    first: '',
+    last: '',
+    bio: ''
   };
   passwordStrength = {
     percent: 0,
@@ -21,6 +24,7 @@ export class SignupComponent implements OnInit {
   // tslint:disable-next-line:no-inferrable-types
   page: number = 1;
   errors: string[] = [];
+  showPass: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -33,7 +37,6 @@ export class SignupComponent implements OnInit {
   }
 
   nextPage() {
-    console.log(this.user);
     this.page++;
     this.navigate(this.page);
   }
@@ -103,5 +106,9 @@ export class SignupComponent implements OnInit {
       this.passwordStrength.percent = 10;
       this.passwordStrength.class = 'error';
     }
+  }
+
+  showPassword() {
+    this.showPass = !this.showPass;
   }
 }

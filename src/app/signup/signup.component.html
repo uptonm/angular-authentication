@@ -9,11 +9,11 @@
 
         <div class="ui mini steps">
           <a class="step" routerLink="/signup/1" routerLinkActive="active">
-            <i class="user icon"></i>
+            <i class="lock icon"></i>
             <div class="content"><div class="title">Account</div></div>
           </a>
           <a class="step" routerLink="/signup/2" routerLinkActive="active">
-            <i class="payment icon"></i>
+            <i class="user icon"></i>
             <div class="content"><div class="title">Profile</div></div>
           </a>
           <a class="step" routerLink="/signup/3" routerLinkActive="active">
@@ -30,7 +30,7 @@
               class="ui left icon input"
               [ngClass]="errors.length !== 0 ? 'error' : ''"
             >
-              <i class="user icon"></i>
+              <i class="paper plane icon"></i>
               <input
                 [(ngModel)]="user.email"
                 type="text"
@@ -121,55 +121,69 @@
         <!-- Page 3 - Confirmation -->
         <div *ngIf="page == 3">
           <div class="ui divider"></div>
-          <div class="field">
-            <div
-              class="ui left icon input"
-              [ngClass]="errors.length !== 0 ? 'error' : ''"
-            >
-              <i class="user icon"></i>
-              <input
-                [(ngModel)]="user.email"
-                type="text"
-                name="email"
-                placeholder="E-mail address"
-              />
+          <div class="ui list">
+            <div class="two fields">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input
+                    [(ngModel)]="user.first"
+                    type="text"
+                    name="first"
+                    placeholder="First Name"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input
+                    [(ngModel)]="user.last"
+                    type="text"
+                    name="last"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="paper plane icon"></i>
+                <input
+                  [(ngModel)]="user.email"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i
+                  class="eye link icon"
+                  id="pass-show"
+                  (click)="showPassword()"
+                ></i>
+                <input
+                  [(ngModel)]="user.password"
+                  type="{{ showPass ? 'text' : 'password' }}"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 1rem">
+              <div class="ui left icon input">
+                <i class="book icon"></i>
+                <input
+                  [(ngModel)]="user.bio"
+                  type="text"
+                  name="bio"
+                  placeholder="Bio"
+                />
+              </div>
             </div>
           </div>
-          <div class="field" style="margin-top: 2rem;">
-            <div
-              class="ui left icon input"
-              [ngClass]="errors.length !== 0 ? 'error' : ''"
-            >
-              <i class="lock icon"></i>
-              <input
-                [(ngModel)]="user.password"
-                (ngModelChange)="analyze(user.password)"
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-            </div>
-          </div>
-          <div class="field">
-            <div
-              class="ui left icon input"
-              [ngClass]="errors.length !== 0 ? 'error' : ''"
-            >
-              <i class="lock icon"></i>
-              <input
-                [(ngModel)]="user.confirmPassword"
-                (ngModelChange)="analyze(user.confirmPassword)"
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-              />
-            </div>
-          </div>
-          <sui-progress
-            class="tiny indicating active"
-            [value]="passwordStrength.percent"
-            [showProgress]="false"
-          ></sui-progress>
         </div>
         <!-- End Page 3 -->
 
