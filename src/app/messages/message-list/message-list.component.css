@@ -1,0 +1,23 @@
+.description {
+  color: white !important;
+}
+
+.item:hover {
+  background-color: rgba(255, 255, 255, .08);
+}
+
+.item {
+  background-color: #1b1c1d;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  padding: 0.5rem 1rem 0.5rem 1rem !important;
+  border-radius: .28571429rem;
+}
+
+.ui .divider {
+  margin: 0.1rem 0rem 0.1rem 0rem;
+  width: 100%;
+}
+
+.ui {
+  margin-bottom: 0px;
+}

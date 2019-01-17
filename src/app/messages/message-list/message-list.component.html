@@ -1,0 +1,11 @@
+<div class="ui list">
+  <a class="item" *ngFor="let message of messages">
+    <img class="ui avatar image" src={{message.from.imagePath}} />
+    <div class="content">
+      <p class="ui">{{message.from.last}},
+        {{message.from.first}}</p>
+      <h3 class="ui blue dividing header" style="margin-bottom: 0px;"> {{message.subject}}</h3>
+      <p class="description">{{message.body}}</p>
+    </div>
+  </a>
+</div>

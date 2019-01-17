@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MessagesComponent } from './messages/messages.component';
 import { FriendsComponent } from './friends/friends.component';
+import { MessageListComponent } from './messages/message-list/message-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FriendsComponent } from './friends/friends.component';
     LoginComponent,
     SignupComponent,
     MessagesComponent,
-    FriendsComponent
+    FriendsComponent,
+    MessageListComponent
   ],
   imports: [
     SuiModule,
