@@ -1,0 +1,16 @@
+#root {
+  height: 35vh;
+  width: 100%;
+  padding-top: 1em;
+  overflow-y: scroll;
+  background-color: #1b1c1d;
+  overflow-x: hidden;
+}
+
+.jump:hover {
+  transform: translateY(-3px);
+}
+
+.ui.images {
+  padding: 1em;
+}

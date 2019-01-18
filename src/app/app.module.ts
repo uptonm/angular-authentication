@@ -15,6 +15,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
 import { MessageViewComponent } from './messages/message-view/message-view.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ImageGalleryComponent } from './profile/image-gallery/image-gallery.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileComponent } from './profile/profile.component';
     FriendsComponent,
     MessageListComponent,
     MessageViewComponent,
-    ProfileComponent
+    ProfileComponent,
+    ImageGalleryComponent
   ],
   imports: [
     SuiModule,

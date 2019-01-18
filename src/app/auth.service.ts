@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
+import { User } from './shared/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,15 @@ import { Router } from '@angular/router';
 export class AuthService {
   // tslint:disable-next-line:no-inferrable-types
   auth: any = false;
+  users: User[] = [
+    new User(
+      'Mike',
+      'Upton',
+      'uptonm@wit.edu',
+      'assets/images/matthew.png',
+      'I am not good at making bios'
+    )
+  ];
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -27,5 +37,13 @@ export class AuthService {
 
   signUp(user) {
     return this.http.put('http://localhost:8000/api/users', user);
+  }
+
+  getUser(email: string) {
+    return this.users.map(user => {
+      if (user.getEmail() === email) {
+        return user;
+      }
+    });
   }
 }

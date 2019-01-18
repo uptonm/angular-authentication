@@ -15,12 +15,20 @@ export class User {
     this.friends = friends;
   }
 
+  getId() {
+    return this.id;
+  }
+
   generateId(): string {
     return '' + Math.floor(Math.random() * 10000000);
   }
 
   updateBio(bio: string): void {
     this.bio = bio;
+  }
+
+  getEmail() {
+    return this.email;
   }
 
   updateEmail(email: string): void {
