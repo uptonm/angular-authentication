@@ -1,0 +1,18 @@
+.ui.grid {
+  /* background-color: white; */
+  margin: 1em 1em 1em 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  color: white;
+}
+
+hr {
+  border-width: 0px;
+  border-bottom: 2px solid #2185d0;
+}

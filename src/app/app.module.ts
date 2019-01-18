@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MessagesComponent } from './messages/messages.component';
 import { FriendsComponent } from './friends/friends.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
+import { MessageViewComponent } from './messages/message-view/message-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     SignupComponent,
     MessagesComponent,
     FriendsComponent,
-    MessageListComponent
+    MessageListComponent,
+    MessageViewComponent
   ],
   imports: [
     SuiModule,

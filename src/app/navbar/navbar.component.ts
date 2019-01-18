@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
+import { MessageService } from '../messages/message-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +11,18 @@ import * as _ from 'lodash';
 })
 export class NavbarComponent implements OnInit {
   // tslint:disable-next-line:no-inferrable-types
-  auth = {};
-  authSubscription;
+  auth: any = {};
+  authSubscription: any;
+  numMessages: number;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(
+    private authService: AuthService,
+    private messageService: MessageService,
+    private router: Router
+  ) {
     this.router.events.subscribe(val => {
       this.auth = this.authService.getUserAuth();
+      this.numMessages = this.messageService.getMessages().length;
     });
   }
 
@@ -27,6 +34,6 @@ export class NavbarComponent implements OnInit {
   }
 
   loggedIn() {
-    return _.isEmpty(this.auth);
+    return !_.isEmpty(this.auth);
   }
 }

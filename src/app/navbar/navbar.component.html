@@ -1,8 +1,6 @@
 <div class="ui inverted menu">
-  <a class="item" [routerLink]="['']"
-    ><i class="icon user secret"></i>Something.com</a
-  >
-  <a class="item" routerLinkActive="active" routerLink="/messages">Messages</a>
+  <a class="item" [routerLink]="['']"><i class="icon user secret"></i>Something.com</a>
+  <a class="item" routerLinkActive="active" routerLink="/messages">Messages<div *ngIf="loggedIn()" class="ui teal label">{{numMessages}}</div></a>
   <a class="item" routerLinkActive="active" routerLink="/friends"> Friends</a>
   <div class="right menu">
     <div class="item">
@@ -11,15 +9,10 @@
         <i class="search link icon"></i>
       </div>
     </div>
-    <a *ngIf="!loggedIn()" class="ui item" (click)="onLogout()">
+    <a *ngIf="loggedIn()" class="ui item" (click)="onLogout()">
       Logout ({{ auth.email }})
     </a>
-    <a
-      *ngIf="loggedIn()"
-      class="ui item"
-      routerLinkActive="active"
-      [routerLink]="['/login']"
-    >
+    <a *ngIf="!loggedIn()" class="ui item" routerLinkActive="active" [routerLink]="['/login']">
       Login
     </a>
   </div>

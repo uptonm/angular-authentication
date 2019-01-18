@@ -4,11 +4,12 @@
       <!-- Message List -->
       <h1 style="color: white; margin: 1rem 0rem 0.3rem 0rem">Messages</h1>
       <div class="ui divider"></div>
-      <app-message-list></app-message-list>
+      <app-message-list [message]="selected" (selectedMessage)="onChange($event)"></app-message-list>
     </div>
-    <div class="eleven wide column box">
+    <div class="eleven wide column box" id="view">
       <div class="container fluid">
         <!-- Currently Viewed Message -->
+        <app-message-view [(selectedMessage)]="selected"></app-message-view>
       </div>
     </div>
   </div>

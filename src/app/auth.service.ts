@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
-import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/user.model';
-import { Message } from '../shared/message.model';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { User } from '../../shared/user.model';
+import { Message } from '../../shared/message.model';
+import { MessageService } from '../message-service.service';
 
 @Component({
   selector: 'app-message-list',
@@ -8,81 +9,24 @@ import { Message } from '../shared/message.model';
   styleUrls: ['./message-list.component.css']
 })
 export class MessageListComponent implements OnInit {
-  messages: Message[] = [
-    new Message(
-      new User(
-        'Mike',
-        'Upton',
-        'uptonm@wit.edu',
-        'I am not good at making bios',
-        'assets/images/matthew.png'
-      ),
-      new User(
-        'Rachel',
-        'Sorrins',
-        'sorrinsr@complet.io',
-        'Something about dogs would probably fit well here. DOGS!',
-        'assets/images/rachel.png'
-      ),
-      'Subject goes here',
-      'The quick fox jumped over the lazy brown dog'
-    ),
-    new Message(
-      new User(
-        'Mike',
-        'Upton',
-        'uptonm@wit.edu',
-        'I am not good at making bios',
-        'assets/images/matthew.png'
-      ),
-      new User(
-        'Rachel',
-        'Sorrins',
-        'sorrinsr@complet.io',
-        'Something about dogs would probably fit well here. DOGS!',
-        'assets/images/rachel.png'
-      ),
-      'Subject goes here',
-      'The quick fox jumped over the lazy brown dog'
-    ),
-    new Message(
-      new User(
-        'Mike',
-        'Upton',
-        'uptonm@wit.edu',
-        'I am not good at making bios',
-        'assets/images/matthew.png'
-      ),
-      new User(
-        'Rachel',
-        'Sorrins',
-        'sorrinsr@complet.io',
-        'Something about dogs would probably fit well here. DOGS!',
-        'assets/images/rachel.png'
-      ),
-      'Subject goes here',
-      'The quick fox jumped over the lazy brown dog'
-    ),
-    new Message(
-      new User(
-        'Mike',
-        'Upton',
-        'uptonm@wit.edu',
-        'I am not good at making bios',
-        'assets/images/matthew.png'
-      ),
-      new User(
-        'Rachel',
-        'Sorrins',
-        'sorrinsr@complet.io',
-        'Something about dogs would probably fit well here. DOGS!',
-        'assets/images/rachel.png'
-      ),
-      'Subject goes here',
-      'The quick fox jumped over the lazy brown dog'
-    )
-  ];
-  constructor() {}
+  @Input()
+  message: Message;
+  @Output()
+  selectedMessage: EventEmitter<Message> = new EventEmitter<Message>();
+  messages: Message[] = [];
+  shouldDim = true;
+  constructor(private messageService: MessageService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const messageTemp = this.messageService.getMessages();
+    setTimeout(() => {
+      this.messages = messageTemp;
+      this.shouldDim = false;
+    }, 0);
+  }
+
+  onSelectMessage(message: Message): void {
+    this.message = message;
+    this.selectedMessage.emit(message);
+  }
 }

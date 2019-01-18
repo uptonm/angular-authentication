@@ -1,0 +1,19 @@
+<div class="ui grid">
+  <div class="row">
+    <div class="three wide column center aligned">
+      <img class="ui avatar image small" src={{selectedMessage.from.imagePath}} />
+    </div>
+    <div class="thirteen wide column">
+      <div class="row">
+        <h1>{{selectedMessage.subject}}</h1>
+      </div>
+      <hr style="width: 100%">
+      <div class="row">
+        <p>From: {{selectedMessage.from.last}}, {{selectedMessage.from.first}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p>{{selectedMessage.body}}</p>
+  </div>
+</div>
