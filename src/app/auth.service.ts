@@ -46,4 +46,12 @@ export class AuthService {
       }
     });
   }
+
+  isAuthenticated() {
+    if (_.isEmpty(this.auth)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }

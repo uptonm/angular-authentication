@@ -16,6 +16,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 import { MessageViewComponent } from './messages/message-view/message-view.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ImageGalleryComponent } from './profile/image-gallery/image-gallery.component';
+import { AuthGuardService } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { ImageGalleryComponent } from './profile/image-gallery/image-gallery.com
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
