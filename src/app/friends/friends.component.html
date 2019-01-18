@@ -1,3 +1,28 @@
-<p>
-  friends works!
-</p>
+<div class="ui grid centered">
+  <h1 style="margin-top: 1em">Friends</h1>
+  <div class="ui row link cards">
+    <div class="card" *ngFor="let friend of friends">
+      <div class="image">
+        <img src={{friend.imagePath}}>
+      </div>
+      <div class="content">
+        <div class="header">{{friend.first}} {{friend.last}}</div>
+        <div class="meta">
+          <a>Friends</a>
+        </div>
+        <div class="description">
+          {{friend.bio}}
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          Joined in 2013
+        </span>
+        <span>
+          <i class="user icon float left"></i>
+          {{friend.friends.length}} Friend{{friend.friends.length === 1 ? '' : 's'}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

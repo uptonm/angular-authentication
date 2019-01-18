@@ -8,7 +8,10 @@ export class User {
     private imagePath: string,
     bio?: string,
     friends?: User[]
-  ) {}
+  ) {
+    this.bio = bio;
+    this.friends = friends;
+  }
 
   updateBio(bio: string): void {
     this.bio = bio;
