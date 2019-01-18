@@ -87,6 +87,158 @@ export class MessageService {
       ),
       'Subject goes here5',
       'The quick fox jumped over the lazy brown dog'
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
+    ),
+    new Message(
+      new User(
+        'Mike',
+        'Upton',
+        'uptonm@wit.edu',
+        'assets/images/matthew.png',
+        'I am not good at making bios'
+      ),
+      new User(
+        'Rachel',
+        'Sorrins',
+        'sorrinsr@complet.io',
+        'assets/images/rachel.png',
+        'Something about dogs would probably fit well here. DOGS!'
+      ),
+      // tslint:disable-next-line
+      "Bob Ross Ipsum Generator, I'm dead",
+      this.bobRoss
     )
   ];
   constructor() {}
