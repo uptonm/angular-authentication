@@ -21,4 +21,8 @@ export class FriendsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  onClick(friend: User) {
+    console.log(friend);
+  }
 }

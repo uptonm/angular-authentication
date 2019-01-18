@@ -10,8 +10,10 @@
       </div>
     </div>
     <a *ngIf="loggedIn()" class="ui item" (click)="onLogout()">
-      Log Out ({{ auth.email }})
+      Log Out
     </a>
+    <a *ngIf="loggedIn()" class="ui item" style="text-align:center" routerLinkActive="active" [routerLink]="['/profile']"><i
+        class="icon user circle" style="color: white"></i></a>
     <a *ngIf="!loggedIn()" class="ui item" routerLinkActive="active" [routerLink]="['/login']">
       Log In
     </a>

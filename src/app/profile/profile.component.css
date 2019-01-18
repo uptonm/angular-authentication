@@ -1,0 +1,17 @@
+#banner {
+  background: url("/assets/images/banner.png") no-repeat center;
+  margin-top: 1.2em;
+}
+
+#profile-image {
+  top: 3em;
+}
+
+#profile-image:hover {
+  transform: translateY(-3px);
+}
+
+body,
+html {
+  background-color: white !important;
+}

@@ -1,4 +1,5 @@
 export class User {
+  private id: string = '';
   private friends: User[] = [];
   private bio: string = '';
   constructor(
@@ -9,8 +10,13 @@ export class User {
     bio?: string,
     friends?: User[]
   ) {
+    this.id = this.generateId();
     this.bio = bio;
     this.friends = friends;
+  }
+
+  generateId(): string {
+    return '' + Math.floor(Math.random() * 10000000);
   }
 
   updateBio(bio: string): void {
